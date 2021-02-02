@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #f09a78;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* SEARCHING TOP BAR */
+
+.top-bar {
+  position: fixed;
+  width: 100vw;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  box-shadow: 0px 2px 38px rgba(240, 154, 120, 0.75);
+  font-size: 66px;
+  background-color: rgb(255, 245, 242);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-bar {
+  width: 50%;
+  max-width: calc(500px * 0.5);
+  margin: 20px;
+  font-size: 28px;
+  padding: 3px 26px;
+  border-radius: 30px;
+  border-style: none;
+  background-color: #ffede8;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-bar input {
+  width: 100%;
+  font-size: 20px;
+  background-color: #ffede8;
+  border-style: none;
+  color: #f09a78;
+}
+
+.search-bar input::placeholder{
+  color: #f09a78;
+  opacity: 0.5;
+}
+
+.top-bar button{
+  background: none;
+  border-style: none;
+}
+
+.fa-search{
+  font-size: 20px;
+  color: #f09a78;
+}
+
+/* HOMEPAGE */
+.homepage {
+  margin-top: 71px;
+  position: absolute;
+  width: 100vw;
+  min-height: calc(100% - 71px);
+  background-color: #ffede8;
+}
+
+.recipe-mobile{
+  display: none;
+}
+
+.recipe {
+  display: flex;
+  flex-direction: row;
+  margin: calc(500px * 0.1);
+}
+
+.recipe .title {
+  margin-top: 0;
+}
+
+.recipe-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: calc(500px * 0.058);
+  font-size: calc(500px * 0.03);;
 }
 
-.App-link {
-  color: #61dafb;
+.image {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #f09a78;
+
+  width: 30vw;
+  height: 30vw;
+
+  max-width: calc(500px * 0.3);;
+  max-height: calc(500px * 0.3);;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+@media (max-width: 500px) {
+  .recipe {
+    margin: 10vw;
   }
-  to {
-    transform: rotate(360deg);
+
+  .recipe-info {
+    margin-left: 5.8vw;
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 400px) {
+  .search-bar input::placeholder {
+    opacity: 0;
+  }
+
+  .recipe {
+    margin: 20px;
+  }
+
+  .recipe-info {
+    margin-left: calc(400px * 0.058);
+    font-size: calc(400px * 0.03);
   }
 }
